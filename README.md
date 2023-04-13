@@ -13,8 +13,17 @@
    -run container on webapp server by pulling same image on docker hub
 5. Rectify if any issue
 
-#on creating (first pipeline stage) after writing the groovy script and build chk in our virtual machine(jenkins server) for the files from github.
-/var/lib/jenkins/workspace
+PIPELINE STAGES STEPS:
+      #on creating (first pipeline stage) after writing the groovy script and build,
+      chk in our virtual machine(jenkins server) for the files from github.
+      /var/lib/jenkins/workspace
+pipeline creation stages help:
+1. for stage 1-Click Pipeline Syntax to generate code for git repo
+  -select branch and repo link and generate script
+3. for stage 3-pushing images to docker hub
+  -Click Pipeline Syntax ->withCredentials:bind credentials to variable->secret text->add details and generate script.
+
+#SSH to webapp server through SSHAgent Plugin and create a container.
 
 
 #errors while writing script and running build:
