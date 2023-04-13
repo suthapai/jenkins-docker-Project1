@@ -20,3 +20,4 @@
 #errors while writing script and running build:
 
 forgot to change branch from master to main as our code is in main branch.
+jenkins jon name should be in lowercase.
