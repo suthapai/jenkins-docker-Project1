@@ -13,6 +13,9 @@
    -run container on webapp server by pulling same image on docker hub
 5. Rectify if any issue
 
+#on creating (first pipeline stage) after writing the groovy script and build chk in our virtual machine(jenkins server) for the files from github.
+/var/lib/jenkins/workspace
+
 
 #errors while writing script and running build:
 
