@@ -1,9 +1,8 @@
 FROM  ubuntu:latest
 MAINTAINER sujethapai@gmail.com
 RUN apt-get update && \
-    apt-get install -y
-   zip\
-   unzip
+    apt-get install -y  zip\
+    unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/academic-education.zip /var/www/html/
 
 WORKDIR /var/www/html/
