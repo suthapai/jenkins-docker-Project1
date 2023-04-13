@@ -6,7 +6,8 @@ pipeline {
         
         stage("git login"){
             steps{
-                git 'https://github.com/vikash-kumar01/Jenkins-Docker-Project.git'
+               
+                 git branch: 'main', url: 'https://github.com/suthapai/jenkins-docker-Project1.git'
             }
         }
          stage("Sending docker file to ansible server"){
@@ -20,19 +21,19 @@ pipeline {
          stage("docker build"){
              steps{
         sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
-        sh 'docker image tag $JOB_NAME:v1.$BUILD_ID vikashashoke/$JOB_NAME:v1.$BUILD_ID'
-        sh 'docker image tag $JOB_NAME:v1.$BUILD_ID vikashashoke/$JOB_NAME:latest'
+        sh 'docker image tag $JOB_NAME:v1.$BUILD_ID sujetha/$JOB_NAME:v1.$BUILD_ID'
+        sh 'docker image tag $JOB_NAME:v1.$BUILD_ID sujetha/$JOB_NAME:latest'
              }
          }
          stage("push Image: DOCKERHUB"){
              steps{
                  withCredentials([string(credentialsId: 'docker_pwd', variable: 'docker_passwd')]) {
-                 sh "docker login -u vikashashoke -p ${docker_passwd}"
-                sh 'docker image push vikashashoke/$JOB_NAME:v1.$BUILD_ID'
-                sh 'docker image push vikashashoke/$JOB_NAME:latest'
+                 sh "docker login -u sujetha -p ${docker_passwd}"
+                sh 'docker image push sujetha/$JOB_NAME:v1.$BUILD_ID'
+                sh 'docker image push sujetha/$JOB_NAME:latest'
                //A number of images will get stored into our jenkins server so need to remove prev build images
                 //local images,taged images & latest images all delete 
-              sh 'docker image rm $JOB_NAME:v1.$BUILD_ID vikashashoke/$JOB_NAME:v1.$BUILD_ID vikashashoke/$JOB_NAME:latest'
+              sh 'docker image rm $JOB_NAME:v1.$BUILD_ID sujetha/$JOB_NAME:v1.$BUILD_ID sujetha/$JOB_NAME:latest'
               }
              }
          }
