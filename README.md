@@ -20,6 +20,8 @@
 #errors while writing script and running build:
 
 1.forgot to change branch from master to main as our code is in main branch.
-2.jenkins jon name should be in lowercase.
+
+2.jenkins job name should be in lowercase.
+
 3.dial unix /var/run/docker.sock: connect: permission denied
   -solution: chmod 777 /var/run/docker.sock on jenkins server
