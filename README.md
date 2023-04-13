@@ -22,6 +22,8 @@ pipeline creation stages help:
   -select branch and repo link and generate script
 3. for stage 3-pushing images to docker hub
   -Click Pipeline Syntax ->withCredentials:bind credentials to variable->secret text->add details and generate script.
+4. for stage 4-docker container deployment
+  -Click Pipeline Syntax ->sshagent: SSH AGENT->add jenkins->ssh username with private key->provide key of server
 
 #SSH to webapp server through SSHAgent Plugin and create a container.
 
