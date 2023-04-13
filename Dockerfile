@@ -1,13 +1,14 @@
 FROM  centos:latest
-MAINTAINER vikashashoke@gmail.com
+MAINTAINER sujethapai@gmail.com
 RUN yum install -y httpd \
  zip\
  unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/academic-education.zip /var/www/html/
+
 WORKDIR /var/www/html/
-RUN unzip photogenic.zip
-RUN cp -rvf photogenic/* .
-RUN rm -rf photogenic photogenic.zip
+RUN unzip academic-education.zip
+RUN cp -rvf academic-education/* .
+RUN rm -rf academic-education academic-education.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
  
