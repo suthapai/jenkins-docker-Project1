@@ -5,6 +5,7 @@
 1. Launch 2 EC2 instances(Jenkins+ Webapp)
 2. Ensure docker is installed on both servers
 3. Install jenkins on jenkins server
+   -Manage jenkins->plugins->avaliable plugins->SSH Agents
 4. Create Pipeline and mention stages
    -git checkout
    -build docker images
