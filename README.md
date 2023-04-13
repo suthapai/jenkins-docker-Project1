@@ -12,3 +12,8 @@
    -push docker images to docker hub
    -run container on webapp server by pulling same image on docker hub
 5. Rectify if any issue
+
+
+#errors while writing script and running build:
+
+forgot to change branch from master to main as our code is in main branch.
