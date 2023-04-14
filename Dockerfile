@@ -1,7 +1,7 @@
-FROM  ubuntu:latest
+FROM  centos:latest
 MAINTAINER sujethapai@gmail.com
-RUN apt-get update && \
-    apt-get install -y  zip\
+RUN yum update && \
+    yum install -y httpd \ zip\
     unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/academic-education.zip /var/www/html/
 
