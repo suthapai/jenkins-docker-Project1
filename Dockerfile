@@ -1,9 +1,12 @@
 FROM  centos:latest
 MAINTAINER sujethapai@gmail.com
+RUN cd /etc/yum.repos.d/
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 RUN yum -y update  \
     && yum install -y httpd \ 
     && zip\
-    && nzip
+    && unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/academic-education.zip /var/www/html/
 
 WORKDIR /var/www/html/
