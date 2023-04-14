@@ -1,9 +1,9 @@
 FROM  centos:latest
 MAINTAINER sujethapai@gmail.com
-RUN yum -y update && \
-    yum install -y httpd \ 
-    zip\
-    unzip
+RUN yum -y update  \
+    && yum install -y httpd \ 
+    && zip\
+    && nzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/academic-education.zip /var/www/html/
 
 WORKDIR /var/www/html/
