@@ -6,12 +6,12 @@ RUN yum -y update  && \
     yum -y install httpd && \ 
     yum install zip -y && \
     yum install unzip -y
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page290/wave-cafe.zip /var/www/html/
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/academic-education.zip /var/www/html/
 
 WORKDIR /var/www/html/
-RUN unzip wave-cafe.zip
-RUN cp -rvf wave-cafe/* .
-RUN rm -rf wave-cafe wave-cafe.zip
+RUN unzip academic-education.zip
+RUN cp -rvf academic-education/* .
+RUN rm -rf academic-education academic-education.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
  
