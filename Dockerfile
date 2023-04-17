@@ -1,12 +1,10 @@
 FROM  centos:latest
 MAINTAINER sujethapai@gmail.com
-RUN sed i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux* &&\
-    sed i 's|#baseurl=http://mirror.centos.org
-|baseurl=http://vault.centos.org
-|g' /etc/yum.repos.d/CentOS-Linux*
-RUN yum -y update  && \
-    yum -y install httpd && \ 
-    yum install zip -y && \
+RUN sed i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&\
+    sed i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+RUN yum -y update  &&\
+    yum -y install httpd &&\ 
+    yum install zip -y &&\
     yum install unzip -y
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page1/academic-education.zip /var/www/html/
 
